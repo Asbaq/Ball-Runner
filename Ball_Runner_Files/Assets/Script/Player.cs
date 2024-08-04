@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -46,7 +47,8 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        rb.AddForce(new Vector3(x,0,z) * speed);
+        //rb.AddForce(new Vector3(x,0,z) * speed);
+        transform.Translate(new Vector3(x, 0, z) * Time.deltaTime * speed, Space.World);
     }
     
    public void Jump()
